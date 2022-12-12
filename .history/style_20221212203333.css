@@ -24,7 +24,7 @@ body{
 
 }
 
-.hot #weather{
+.hot .weather{
     background: url(./image/111.png) no-repeat center/cover;
 
 }
@@ -33,7 +33,7 @@ body{
 
 }
 
-.cold #weather{
+.cold .weather{
     background: url(./image/222.png) no-repeat center/cover;
 
 }

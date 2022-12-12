@@ -23,12 +23,10 @@ async function changeWeatherUI(capitalSearch){
         visibility.innerText = data.visibility + 'm'
         wind.innerText = data.wind.speed + 'm/s'
         sun.innerText = data.main.humidity + '%'
-        let temp = Math.round((data.main.temp) )
-        console.log(data)
-        console.log(temp)
+        let temp = Math.round((data.main.temp - 273,15) )
         value.innerText = temp
         shortDesc.innerText = data.weather[0].main
-        time.innerText = new Date().toLocaleString()
+        time.innerText = new Date().toLocaleString('aus')
 
         if (temp >25){
             body.setAttribute('class' , 'hot')
@@ -52,5 +50,5 @@ search.addEventListener('keypress', function(e){
         changeWeatherUI(capitalSearch)
     }
 })
-changeWeatherUI('ha noi')
+changeWeatherUI(capitalSearch)
 

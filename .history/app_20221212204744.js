@@ -12,7 +12,7 @@ var body = document.querySelector('body ')
 
 
 async function changeWeatherUI(capitalSearch){
-   
+    
     let  apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${capitalSearch}&units=metric&appid=d78fd1588e1b7c0c2813576ba183a667`
 
     let data = await fetch(apiURL).then(res=> res.json())
@@ -23,12 +23,10 @@ async function changeWeatherUI(capitalSearch){
         visibility.innerText = data.visibility + 'm'
         wind.innerText = data.wind.speed + 'm/s'
         sun.innerText = data.main.humidity + '%'
-        let temp = Math.round((data.main.temp) )
-        console.log(data)
-        console.log(temp)
+        let temp = Math.round((data.main.temp - 273,15) )
         value.innerText = temp
         shortDesc.innerText = data.weather[0].main
-        time.innerText = new Date().toLocaleString()
+        time.innerText = new Date().toLocaleString('aus')
 
         if (temp >25){
             body.setAttribute('class' , 'hot')

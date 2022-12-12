@@ -23,8 +23,7 @@ async function changeWeatherUI(capitalSearch){
         visibility.innerText = data.visibility + 'm'
         wind.innerText = data.wind.speed + 'm/s'
         sun.innerText = data.main.humidity + '%'
-        let temp = Math.round((data.main.temp) )
-        console.log(data)
+        let temp = Math.round((data.main.temp - 273,15) )
         console.log(temp)
         value.innerText = temp
         shortDesc.innerText = data.weather[0].main
